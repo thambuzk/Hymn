@@ -16,7 +16,7 @@ interface DispatchProps {};
 interface SongNumberListProps extends OwnProps,StateProps,DispatchProps {};
 
 const SongNumberListPage: React.FC<SongNumberListProps> = ({}) => {
-  const [segment, setSegment] = useState<'number' | 'index' | 'occasion'>('number');
+  const [segment, setSegment] = useState<'number' | 'index' >('number');
 
   return (
     <IonPage>
@@ -32,17 +32,14 @@ const SongNumberListPage: React.FC<SongNumberListProps> = ({}) => {
             <IonSegmentButton value="index" checked={segment === 'index'}>
             സൂചിക
             </IonSegmentButton>
-            <IonSegmentButton value="occasion" checked={segment === 'occasion'}>
-            അവസരത്തിൽ
-            </IonSegmentButton>
           </IonSegment>
         </IonToolbar>
         
       </IonHeader>
 
       <IonContent>
-        <SongByNumber hide={segment === 'index' || segment === 'occasion'}></SongByNumber>
-        <SongByIndex hide={segment === 'number' || segment === 'occasion'}></SongByIndex>
+        <SongByNumber hide={segment === 'index' }></SongByNumber>
+        <SongByIndex hide={segment === 'number' }></SongByIndex>
       </IonContent>
     </IonPage>
   );

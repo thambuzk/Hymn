@@ -3,20 +3,14 @@ import {
   IonCard,
   IonCardContent,
   IonCardHeader,
-  IonCardSubtitle,
   IonCardTitle,
   IonContent,
   IonHeader,
-  IonIcon,
-  IonItem,
-  IonLabel,
-  IonList,
-  IonListHeader,
   IonMenuButton,
   IonPage,
   IonTitle,
   IonToolbar
-  } from '@ionic/react';
+} from '@ionic/react';
 import { book, build, colorFill, grid } from 'ionicons/icons';
 import React from 'react';
 import './Home.css';
@@ -34,18 +28,18 @@ const HomePage: React.FC = () => {
       </IonHeader>
       <IonContent>
         <IonCard className="welcome-card">
-          <img src="/assets/shapes.svg" alt=""/>
+          <img src="/assets/shapes.svg" alt="" />
           <IonCardHeader>
             <IonCardTitle>മലയാള പാട്ടു പുസ്തകം</IonCardTitle>
           </IonCardHeader>
           <IonCardContent>
             <p>
-            സൗത്ത് ഇന്ത്യയിലെ പള്ളിയിലെ ഗാനങ്ങളുടെ ശേഖരം.
+              സൗത്ത് ഇന്ത്യയിലെ പള്ളിയിലെ ഗാനങ്ങളുടെ ശേഖരം.
             </p>
           </IonCardContent>
         </IonCard>
 
-        
+
       </IonContent>
     </IonPage>
   );
