@@ -1,4 +1,4 @@
-import { IonList, IonItemGroup,IonItemDivider,IonLabel,IonItem, IonRow, IonCol, IonIcon} from '@ionic/react';
+import { IonList, IonItemGroup,IonItemDivider,IonLabel,IonItem, IonRow, IonCol, IonIcon, IonNote} from '@ionic/react';
 import React, { useState} from 'react';
 import {Song} from '../models/Song'
 import {SongIndex} from '../models/SongIndex'
@@ -36,12 +36,10 @@ const SongByIndex: React.FC<SongByIndexProps> = ({songs,songindex,hide}) => {
         </IonItemDivider>
         {group.songlist.map(x => (
           <IonItem button detail={false} routerLink={`/home/songdetail/${x-1}`}>
-          <IonLabel>
-          {(x<62) ? songs[x-1].starting : ''} 
+          <IonLabel >
+          {(x<550) ? songs[x-1].starting : ''} 
           </IonLabel>  
-          <IonLabel>
-          {x}
-          </IonLabel>  
+           <IonNote slot="end" color="primary">{x}</IonNote>  
           </IonItem>
         ))}
       </IonItemGroup>

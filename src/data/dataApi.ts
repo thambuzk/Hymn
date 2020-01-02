@@ -12,13 +12,15 @@ export const getSongData = async () => {
     const songs = songcombinedtext.split("|").map(
         (songtext,id) => ({
             id: id,
-            lyrics: songtext.replace("A","").replace("B",""),
-            starting: songtext.substring(songtext.indexOf("A")+1,songtext.indexOf("B"))
+            lyrics: (id===339 || id===303 || id===8 || id===116 || id===264 || id===256 || id===435 || id===26 || id===302) ? songtext.replace("X","").replace("Z","").replace(/^\s+|\s+$/g, '') : songtext.replace("A","").replace("B","").replace(/^\s+|\s+$/g, ''),
+            starting: (id===339 || id===303 || id===8 || id===116 || id===264 || id===256 || id===435 || id===26 || id===302) ? songtext.substring(songtext.indexOf("X")+1,songtext.indexOf("Z")) : songtext.substring(songtext.indexOf("A")+1,songtext.indexOf("B"))
         })
     ) as Song[];
+
+    console.log(songs);
     
     const songindex = await response[0].json() as SongIndex[];
-    
+
     const data = {
         songs,
         songindex
