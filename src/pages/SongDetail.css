@@ -3,4 +3,8 @@
   padding:20px;
   white-space: pre-wrap;
   font-size:15px;
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }

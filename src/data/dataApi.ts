@@ -1,5 +1,7 @@
 import {Song} from '../models/Song';
 import {SongIndex} from '../models/SongIndex'
+import {SongIndexNew} from '../models/SongIndexNew'
+import {SongList} from '../models/SongList'
 
 const songindexUrl = 'assets/data/SongIndex.json';
 const songlyricspath = 'assets/data/Songs/combined.txt';
@@ -20,6 +22,16 @@ export const getSongData = async () => {
     console.log(songs);
     
     const songindex = await response[0].json() as SongIndex[];
+
+    const songindexnew = songindex.map(
+        (si) => ({
+            letter: si.letter,
+            // songlist: si.songlist.map((sl) => ({songid:sl,starting:((typeof songs[sl].starting === 'undefined') ? "Song starting not found" : songs[sl].starting)}))
+            songlist: si.songlist.map((sl) => ({songid:sl,starting:typeof songs[1].starting}))
+        })
+    );
+
+    console.log(songindexnew);
 
     const data = {
         songs,
